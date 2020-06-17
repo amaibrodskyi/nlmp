@@ -7,7 +7,12 @@ apt-get install -y \
 zlib1g-dev \
 wget \
 git \
-procps
+procps \
+libzip-dev \
+zip \
+unzip
+
+RUN docker-php-ext-install zip
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --filename=composer \
